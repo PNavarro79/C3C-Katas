@@ -1,0 +1,66 @@
+Kata 1
+
+public static String localizaPosicaoNome (List<String> nomes)
+{
+    String posicaoNome = 'Encontrei Marlon na posição ';
+    for (Integer i = 0; i < nomes.size(); i++)
+    {
+        if (nomes[i] == 'Marlon')
+        {
+            posicaoNome = posicaoNome + i;
+        }
+    }
+    
+    return posicaoNome;
+}
+
+Kata 2
+
+public static List<Integer> localizaMultiplosIndex (List<Integer> numeros)
+{
+    List<Integer> multiplos = new List<Integer>();
+    
+    for (Integer i = 0; i < numeros.size(); i++)
+    {            
+        if (i <> 0 && Math.mod(numeros[i], i) == 0)
+        {
+            multiplos.add(numeros[i]);
+        }
+    }
+    
+    return multiplos;
+}
+
+Kata 3
+
+public static String trocaNomeSobrenome(String nome)
+{
+    String sobrenomeNome = nome.substringAfter(' ') + ' ' + nome.substringBefore(' ');
+    
+    return sobrenomeNome;
+}
+
+Kata 4
+
+public static Integer contaRepetidos(String caracteres)
+{
+    Set<String> caracteresSeparados = new Set<String>();
+    Integer repeticoes = 0;
+    String auxiliar = caracteres.toLowerCase();
+    
+    while(auxiliar.length() > 0)
+    {
+        caracteresSeparados.add(auxiliar.left(1));
+        auxiliar = auxiliar.removeStart(auxiliar.left(1));
+    }
+    
+    for (String caracter : caracteresSeparados)
+    {
+        if (caracteres.toLowerCase().countMatches(caracter) > 1)
+        {
+            repeticoes++;
+        }
+    }
+    
+    return repeticoes;
+}
